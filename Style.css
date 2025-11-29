@@ -122,9 +122,10 @@ ul > li > a:hover::after {
 
 
 
-@media (max-width:600px) {
+@media (max-width:700px) {
     ul li a{
         margin-left: 0;
+        display: block;
     }
     ul li a::after{
         display: none;
@@ -222,7 +223,7 @@ ul > li > a:hover::after {
     font-family: 'MyCustomIslamicFont'; 
     
     /* 2. تحديد مسار الملف في مجلد المشروع */
-    src: url('qiswah.otf') format('truetype'); 
+    src: url('/Libraries/qiswah-font/qiswah.otf') format('truetype'); 
     
     /* 3. (اختياري) وزن الخط (عادي، عريض، إلخ) */
     font-weight: 900; 
@@ -293,4 +294,15 @@ ul > li > a:hover::after {
 .reset-btn {
     background-color: #4CAF50; /* لون ثانوي مناسب للزر */
     color: white;
+}
+
+@media (max-width:500px) {
+    .tasbih-container{
+        display: flex;
+        flex-direction: column;
+    }
+    .tasbih-btn{
+        margin: 10px 0;
+        width: 100%;
+    }
 }
