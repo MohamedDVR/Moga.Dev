@@ -222,7 +222,7 @@ ul > li > a:hover::after {
     font-family: 'MyCustomIslamicFont'; 
     
     /* 2. تحديد مسار الملف في مجلد المشروع */
-    src: url('/Libraries/qiswah-font/qiswah.otf') format('truetype'); 
+    src: url('qiswah.otf') format('truetype'); 
     
     /* 3. (اختياري) وزن الخط (عادي، عريض، إلخ) */
     font-weight: 900; 
