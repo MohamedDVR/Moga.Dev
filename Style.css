@@ -1,0 +1,296 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+body{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-color: #0F3738 ; 
+    height: 100vh;
+    overflow-x: hidden;
+    color: #fff;
+}
+
+
+.container{
+    height: 100vh;
+    margin: 0 5rem; /*?Intelegent*/
+}
+
+
+nav {
+    
+    display: flex;
+    justify-content: space-between; /* الأفضل لفصل الشعار والقائمة */
+    align-items: center;
+    padding: 1rem; /* إضافة مسافة علوية وسفلية */
+    background-color: #004D40; /* أخضر داكن زمردي (خلفية Navbar) */
+}
+ul{
+    list-style: none;
+    display: flex;
+
+}
+ul > li > a {
+      color: #E8E8E8;
+    font-weight: 500;
+    text-decoration: none;
+    padding: 0.5rem 0.8rem;
+    position: relative;
+    margin-left: 2rem;
+    overflow: hidden;
+    transition: color 0.3s ease-in-out;
+}
+ul > li > a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 0; 
+    width: 100%;
+    background-color: #FFEB3B; /* اللون الذهبي */    
+    transition: 0.3s ease-in-out;
+
+}
+
+/* 4. تفعيل الحركة عند التمرير */
+ul > li > a:hover {
+    color: #FFEB3B; /* تغيير لون النص للذهبي */
+}
+
+ul > li > a:hover::after {
+    height: 3px; 
+
+    /* سحب العنصر من اليسار إلى اليمين بنسبة 0% ليظهر */
+}
+/*! Content*/
+/*        
+? animation: name  duration timing-function delay iteration-count direction fill-mode;
+*/
+   .content img{
+       transition: 150ms ease-in-out;
+        width: 220px;
+        animation: animation1 2s ease-in-out;
+    }
+ .content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70%;
+    color: white;
+
+}
+ .content-text p{
+        font-weight: 300;
+        margin-bottom:30px ;
+        line-height: 1.4;
+        width: 60%;
+    }
+
+ .content-text a{
+        text-decoration: none;
+        color: black;
+        font-size: 14px;
+        padding: 10px 15px;
+        background-color: white;
+        border-radius: 30px;
+    }
+
+ .content-text h1{
+        font-size: 40px;
+        font-weight: bold;
+        margin-bottom: 10px;
+        
+        >span{
+            font-size: 70px;
+        }
+    }
+
+
+@keyframes animation1 {
+    0%{
+        transform: translateX(500px);
+    }
+
+    100%{
+        transform: translateX(0);
+    }
+    
+}
+
+
+
+
+
+@media (max-width:600px) {
+    ul li a{
+        margin-left: 0;
+    }
+    ul li a::after{
+        display: none;
+    }
+    nav{
+        background: none;
+    }
+    nav,ul,.content{
+        flex-direction: column;
+        align-items: center;
+        font-size: 18px;
+        padding: 10px;
+        width: 100%;
+
+    }
+    .content img{
+        display: none;
+    }
+    .content{
+        align-items: center;
+
+    }
+    .content .content-text{
+        font-size: 16px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+       .content .content-text h1{
+        font-size: 30px !important;
+    }
+       .content .content-text span{
+        font-size: 25px !important;
+    }
+    .content .content-text p{
+        width: 100% !important;
+    }
+    ul{
+        text-align: center;
+        margin: 10px 0;
+    
+    }
+    ul li{
+        margin: 10px 0;
+        background-color: #2C6B5E;
+        width: 100%;
+        cursor: pointer;
+        padding: 10px 15px;
+        transition: 150ms ease-in-out;
+        &:hover{
+            transform: scale(1.1);
+        }
+    }
+
+    .active{
+        display: block !important;
+    }
+
+    .social{
+        flex-direction: row;
+    }
+
+    
+}
+
+@media (min-width:601px) and (max-width:900px) {
+ 
+     .content img{
+        display: none;
+    }
+       .content .content-text h1{
+        font-size: 30px !important;
+    }
+       .content .content-text span{
+        font-size: 25px !important;
+    }
+    .content .content-text p{
+        width: 100% !important;
+    }
+
+
+
+    .active{
+        display: block !important;
+    }
+
+
+}
+
+/*! MY features*/
+
+@font-face {
+    /* 1. اسم الخط الذي ستستخدمه في باقي التنسيقات */
+    font-family: 'MyCustomIslamicFont'; 
+    
+    /* 2. تحديد مسار الملف في مجلد المشروع */
+    src: url('/Libraries/qiswah-font/qiswah.otf') format('truetype'); 
+    
+    /* 3. (اختياري) وزن الخط (عادي، عريض، إلخ) */
+    font-weight: 900; 
+    
+    /* 4. (اختياري) نمط الخط (عادي، مائل) */
+    font-style: normal;
+
+}
+
+:root {
+  /* تعريف اللون الأساسي (الذهبي الدافئ) */
+  --primary-color: #DAA520; 
+
+  /* تعريف لون الخلفية الداكن (للتناسق) */
+  --dark-background: #1a2c20;
+  
+  /* يمكن إضافة أي لون آخر هنا (مثل لون النص الثانوي) */
+}
+.Muslim{
+    font-size: 30px;
+    font-family: MyCustomIslamicFont;
+}
+/* تنسيق علبة التسبيح الرئيسية */
+.tasbih-container {
+    text-align: center;
+
+    padding: 30px;
+    background-color: #1a2c20; /* خلفية داكنة متناسقة */
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    max-width: 300px;
+    margin: 20px auto; /* توسيط العنصر */
+    color: var(--primary-color); /* اللون الذهبي */
+}
+
+/* تنسيق شاشة العداد */
+.counter-display {
+    margin-top: 10px;
+    font-size: 4em; /* حجم كبير جداً */
+    font-weight: bold;
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 3px solid var(--primary-color); /* إطار ذهبي */
+    border-radius: 5px;
+}
+
+/* تنسيق الأزرار */
+.tasbih-btn {
+    padding: 10px 20px;
+    font-size: 1.2em;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#increment-btn {
+    background-color: var(--primary-color); /* اللون الذهبي للخلفية */
+    color: #1a2c20; /* لون النص الداكن */
+    margin-right: 10px;
+}
+
+#increment-btn:hover {
+    opacity: 0.9;
+}
+
+.reset-btn {
+    background-color: #4CAF50; /* لون ثانوي مناسب للزر */
+    color: white;
+}
